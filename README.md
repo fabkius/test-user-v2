@@ -9,7 +9,7 @@ Instalacion:
 
 Arquitectura:
 
-    - Se realiza solución sobre un ms creado con springboot 2.0 con java versión 8, se estructura y ordena internamente en la separación de 3 capas (capa controladores, capa de negocio y capa de acceso a datos), se implementa una bd en memoria H2 la cual autogenera sus tablas y relaciones en base a los objetos de dominio que se utilizan en el guardado y consulta de los datos.
+    - Se realiza solución sobre un ms creado con springboot 1.5 con java versión 8, se estructura y ordena internamente en la separación de 3 capas (capa controladores, capa de negocio y capa de acceso a datos), se implementa una bd en memoria H2 la cual autogenera sus tablas y relaciones en base a los objetos de dominio que se utilizan en el guardado y consulta de los datos.
 
     - Se implemeta Hibernate para la persistencia con la bd.
 
