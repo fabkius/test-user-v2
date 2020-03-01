@@ -48,13 +48,4 @@ public class SaveUserControllerTest {
         saveUserController.addUser(Fixtures.SAVE_BADPASSWORD());
     }
 
-    @Test
-    public void shouldReturnFindOK(){
-        when(userService.getUser(any(Long.class))).thenReturn(Fixtures.SAVE_OK());
-        UserDto response = saveUserController.findUser(1L);
-        Assert.assertEquals(response.getEmail(),"mail@mail.com");
-        Assert.assertEquals(response.getPassword(),"Awertte1");
-        Assert.assertEquals(response.getPhones().get(0).getCitycode(),"32");
-
-    }
 }
