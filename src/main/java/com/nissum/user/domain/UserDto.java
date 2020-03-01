@@ -1,7 +1,6 @@
 package com.nissum.user.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.nissum.user.util.Util;
 import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.util.Date;
@@ -21,7 +20,6 @@ public class UserDto {
     private String email;
     @Column
     private String password;
-
     @JsonIgnore
     @CreationTimestamp
     @Column
@@ -75,7 +73,6 @@ public class UserDto {
         this.phones = phones;
     }
 
-
     public Long getId() {
         return id;
     }
@@ -97,13 +94,7 @@ public class UserDto {
     }
 
     public void setEmail(String email) {
-        if(Util.validateMail(email)){
-            this.email = email;
-        }else{
-            throw new EntityExistsException("invalid mail format "
-                    + email);
-        }
-
+       this.email = email;
     }
 
     public String getPassword() {
@@ -111,13 +102,7 @@ public class UserDto {
     }
 
     public void setPassword(String password) {
-        if(Util.validatePassword(password)){
-            this.password = password;
-        }else{
-            throw new EntityExistsException("format password incorrect "
-                    + email);
-        }
-
+      this.password = password;
     }
 
 }
