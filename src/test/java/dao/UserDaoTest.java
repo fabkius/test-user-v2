@@ -1,28 +1,16 @@
 package dao;
 
 import com.nissum.user.dao.UserDaoImpl;
-import com.nissum.user.domain.PhonesDto;
 import com.nissum.user.domain.UserDto;
 import fixtures.Fixtures;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.internal.SessionImpl;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
-
 import javax.persistence.EntityManager;
-
-import java.io.Serializable;
-import java.util.ArrayList;
-
 import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
