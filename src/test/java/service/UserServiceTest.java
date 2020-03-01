@@ -3,6 +3,7 @@ package service;
 import com.nissum.user.dao.UserDao;
 import com.nissum.user.domain.UserDto;
 import com.nissum.user.domain.UserRsDto;
+import com.nissum.user.exception.UserException;
 import com.nissum.user.service.UserService;
 import fixtures.Fixtures;
 import org.junit.Assert;
@@ -11,9 +12,6 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-
-import javax.persistence.EntityExistsException;
-
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.when;
@@ -38,7 +36,7 @@ public class UserServiceTest {
         Assert.assertNull(response.getToken());
     }
 
-    @Test(expected = EntityExistsException.class)
+    @Test(expected = UserException.class)
     public void shouldReturnMailRegisterNow(){
         when(userdao.save(any(UserDto.class))).thenReturn(Fixtures.CREA_RS_SAVE_SERIALIZABLE());
         when(userdao.findByMail(anyString())).thenReturn(true);
